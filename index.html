@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOOTYZONE | Football News, Players & Matches</title>
+  <meta name="description" content="FOOTYZONE: a sample football website with news, players, clubs, standings and matches.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loading screen (hidden by script.js) -->
+  <div id="loader"><div class="ball">⚽</div><p>Loading FOOTYZONE...</p></div>
+
+  <header class="header">
+    <a href="#home" class="logo">FOOTY<span>ZONE</span></a>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#news">News</a><a href="#players">Players</a>
+      <a href="#clubs">Clubs</a><a href="#league">Premier League</a><a href="#matches">Matches</a>
+    </nav>
+    <input id="globalSearch" type="search" placeholder="Search players..." aria-label="Search players">
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle dark or light mode">🌙</button>
+    <button id="menuBtn" class="icon-btn menu" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="lights"></div>
+      <div class="hero-content">
+        <h2>Where football <br>comes alive.</h2>
+        <p>News, players, clubs, tables and matches in one place.</p>
+        <a href="#players" class="btn">Explore players</a>
+        <a href="#matches" class="btn ghost">Match centre</a>
+      </div>
+      <div class="pitch"></div>
+    </section>
+
+    <p class="notice">ℹ️ All statistics, scores, fixtures and news on this site are <b>sample/fictional data</b> for a learning project, not live results.</p>
+
+    <section id="headlines" class="wrap">
+      <h2 class="title">Latest headlines</h2>
+      <div class="grid" id="headlineGrid"></div>
+      <h2 class="title">Featured matches</h2>
+      <div class="grid" id="featuredGrid"></div>
+      <h2 class="title">Trending clubs</h2>
+      <div class="grid" id="trendingGrid"></div>
+    </section>
+
+    <section id="news" class="wrap">
+      <h2 class="title">Football news</h2>
+      <div class="tabs" id="newsTabs"></div>
+      <div class="grid" id="newsGrid"></div>
+    </section>
+
+    <section id="players" class="wrap">
+      <h2 class="title">Players</h2>
+      <div class="filters">
+        <select id="posFilter"><option value="All">All positions</option><option>Forward</option><option>Midfielder</option><option>Defender</option><option>Goalkeeper</option></select>
+        <select id="clubFilter"><option value="All">All clubs</option></select>
+        <button id="favOnly" class="btn ghost">♡ Favourites only</button>
+      </div>
+      <div class="grid" id="playerGrid"></div>
+    </section>
+
+    <section id="clubs" class="wrap">
+      <h2 class="title">Clubs</h2>
+      <div class="grid" id="clubGrid"></div>
+    </section>
+
+    <section id="league" class="wrap">
+      <h2 class="title">Premier League table <small>(sample)</small></h2>
+      <div class="legend"><i class="ucl"></i>Champions League <i class="uel"></i>Europa League <i class="rel"></i>Relegation</div>
+      <div class="table-scroll">
+        <table id="table">
+          <thead><tr><th>#</th><th>Club</th><th data-k="p">P</th><th data-k="w">W</th><th data-k="d">D</th><th data-k="l">L</th><th data-k="gf">GF</th><th data-k="ga">GA</th><th data-k="gd">GD</th><th data-k="pts">Pts</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="hint">Tap a column heading to sort.</p>
+    </section>
+
+    <section id="matches" class="wrap">
+      <h2 class="title">Match centre <small>(fictional results)</small></h2>
+      <div class="grid" id="matchGrid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden><div class="modal-box"><button id="closeModal" class="icon-btn" aria-label="Close">✕</button><div id="modalBody"></div></div></div>
+
+  <footer>© 2026 FOOTYZONE. Learning project with sample data. Not affiliated with any club or league.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
